@@ -26,7 +26,7 @@ jobs:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       with:
         image: matthewjsporter/docker-healthcheck:latest
-        args: --file=Dockerfile --exclude-base-image-vulns
+        args: --file=Dockerfile --exclude-base-image-vulns --policy-path=.snyk
     - name: Docker push
       run: |
         echo $DOCKER_PASSWORD | docker login --username $DOCKER_USERNAME --password-stdin
