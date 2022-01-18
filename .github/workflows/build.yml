@@ -31,13 +31,13 @@ jobs:
         tags: matthewjsporter/docker-healthcheck:latest
 
 
-    - name: Run Snyk to check Docker image for vulnerabilities
-      uses: snyk/actions/docker@master
-      env:
-        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      with:
-        image: matthewjsporter/docker-healthcheck:latest
-        args: --file=Dockerfile --exclude-base-image-vulns --policy-path=.snyk
+    #- name: Run Snyk to check Docker image for vulnerabilities
+    #  uses: snyk/actions/docker@master
+    #  env:
+    #    SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+    #  with:
+    #    image: matthewjsporter/docker-healthcheck:latest
+    #    args: --file=Dockerfile --exclude-base-image-vulns --policy-path=.snyk
     
     - name: Build and push
       uses: docker/build-push-action@v2

@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian:buster
 
 # Update packages
 RUN apt-get update
