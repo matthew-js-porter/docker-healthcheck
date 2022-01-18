@@ -6,7 +6,7 @@ RUN apt-get upgrade -y
 
 # Install docker
 RUN apt-get install curl -y
-RUN curl -fsSL https://get.docker.com -o get-docker.sh
+RUN curl -klfsSL https://get.docker.com -o get-docker.sh
 RUN sh get-docker.sh
 
 CMD docker ps
